@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A. Abdul Javith | Full Stack Web Developer</title>
+  <meta name="description"
+    content="Portfolio of A. Abdul Javith — BE Computer Science and Engineering Student, Full Stack Web Developer.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- Boxicons for social + UI icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ============================= -->
+  <!-- LOADING SCREEN -->
+  <!-- ============================= -->
+  <div class="loader" id="loader">
+    <div class="loader-content">
+      <div class="loader-logo">AJ</div>
+      <div class="loader-bar"><span></span></div>
+      <div class="loader-text">Loading Experience<span class="dots"><span>.</span><span>.</span><span>.</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================= -->
+  <!-- CUSTOM CURSOR -->
+  <!-- ============================= -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ============================= -->
+  <!-- ANIMATED BACKGROUND CANVAS (Particles) -->
+  <!-- ============================= -->
+  <canvas id="particleCanvas"></canvas>
+  <div class="mouse-glow" id="mouseGlow"></div>
+
+  <!-- ============================= -->
+  <!-- NAVIGATION -->
+  <!-- ============================= -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">AJ<span class="nav-logo-dot">.</span></a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active" data-nav="home">Home</a>
+        <a href="#about" class="nav-link" data-nav="about">About</a>
+        <a href="#skills" class="nav-link" data-nav="skills">Skills</a>
+        <a href="#projects" class="nav-link" data-nav="projects">Projects</a>
+        <a href="#services" class="nav-link" data-nav="services">Services</a>
+        <a href="#education" class="nav-link" data-nav="education">Education</a>
+        <a href="#testimonials" class="nav-link" data-nav="testimonials">Testimonials</a>
+        <a href="#contact" class="nav-link" data-nav="contact">Contact</a>
+      </nav>
+
+      <a href="#contact" class="nav-cta">Let's Talk</a>
+
+      <div class="nav-toggle" id="navToggle">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================= -->
+    <!-- HERO SECTION -->
+    <!-- ============================= -->
+    <section class="hero" id="home">
+      <div class="hero-grid-overlay"></div>
+      <div class="hero-container">
+
+        <div class="hero-eyebrow reveal-up">
+          <span class="pulse-dot"></span>
+          Available for opportunities
+        </div>
+
+        <h1 class="hero-title reveal-up" style="--delay:0.1s">
+          Hi, I'm <span class="gradient-text">A. Abdul Javith</span>
+        </h1>
+
+        <h2 class="hero-subtitle reveal-up" style="--delay:0.2s">
+          <span id="typedText"></span><span class="typed-cursor">|</span>
+        </h2>
+
+        <p class="hero-desc reveal-up" style="--delay:0.3s">
+          BE Computer Science &amp; Engineering student crafting beautiful, responsive
+          and user-friendly digital experiences. Passionate about clean code,
+          thoughtful design, and turning ideas into impactful products.
+        </p>
+
+        <div class="hero-actions reveal-up" style="--delay:0.4s">
+          <a href="#projects" class="btn btn-primary">
+            <i class='bx bx-rocket'></i> View My Work
+          </a>
+          <a href="#" class="btn btn-outline" id="resumeBtn">
+            <i class='bx bx-download'></i> Download Resume
+          </a>
+        </div>
+
+        <div class="hero-socials reveal-up" style="--delay:0.5s">
+          <a href="https://github.com/javithabdul924-arch" target="_blank" rel="noopener" aria-label="GitHub"
+            class="social-icon"><i class='bx bxl-github'></i></a>
+          <a href="https://www.linkedin.com/in/abdul-javith-10b9763b6/" target="_blank" rel="noopener"
+            aria-label="LinkedIn" class="social-icon"><i class='bx bxl-linkedin-square'></i></a>
+          <a href="https://www.instagram.com/mr.smart__official/" target="_blank" rel="noopener" aria-label="Instagram"
+            class="social-icon"><i class='bx bxl-instagram'></i></a>
+          <a href="mailto:javithabdul924@gmail.com" aria-label="Email" class="social-icon"><i
+              class='bx bx-envelope'></i></a>
+          <a href="https://wa.me/916379748608" target="_blank" rel="noopener" aria-label="WhatsApp"
+            class="social-icon"><i class='bx bxl-whatsapp'></i></a>
+        </div>
+
+        <div class="hero-stats reveal-up" style="--delay:0.6s">
+          <div class="stat-item">
+            <span class="stat-number" data-count="15">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Projects Built</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="10">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Technologies</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="3">0</span>
+            <span class="stat-label">Years Learning</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="100">0</span><span class="stat-plus">%</span>
+            <span class="stat-label">Dedication</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+        <span class="scroll-mouse"><span class="scroll-wheel"></span></span>
+        <small>Scroll</small>
+      </a>
+    </section>
+
+    <!-- ============================= -->
+    <!-- ABOUT SECTION -->
+    <!-- ============================= -->
+    <section class="section" id="about">
+      <div class="section-container">
+        <div class="section-header reveal-up">
+          <span class="section-eyebrow">Get To Know Me</span>
+          <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-visual reveal-left">
+            <div class="about-card-glow">
+              <div class="about-avatar">
+                <div class="avatar-ring"></div>
+                <div class="avatar-inner">
+                  <img
+                    src="https://res.cloudinary.com/hcufi9bt/image/upload/v1784090260/WhatsApp_Image_2026-07-15_at_9.20.20_AM_eded7k_ryk6sx.jpg"
+                    alt="A. Abdul Javith" class="profile-image">
+                </div>
+              </div>
+              <div class="floating-chip chip-1"><i class='bx bxl-html5'></i> HTML5</div>
+              <div class="floating-chip chip-2"><i class='bx bxl-css3'></i> CSS3</div>
+              <div class="floating-chip chip-3"><i class='bx bxl-javascript'></i> JS</div>
+              <div class="floating-chip chip-4"><i class='bx bxl-python'></i> Python</div>
+            </div>
+          </div>
+
+          <div class="about-content reveal-right">
+            <h3 class="about-heading">Future Full Stack Web Developer | Front-End Developer | Python Learner</h3>
+            <p class="about-text">
+              I am A. Abdul Javith, currently studying Bachelor of Engineering in
+              Computer Science and Engineering. I am passionate about creating
+              beautiful, responsive and user-friendly websites. I enjoy learning
+              new technologies, solving programming problems and continuously
+              improving my skills.
+            </p>
+            <p class="about-text">
+              My goal is to become a professional Full Stack Developer and build
+              impactful digital products that solve real-world problems while
+              delivering an exceptional user experience.
+            </p>
+
+            <div class="about-info-grid">
+              <div class="info-item">
+                <i class='bx bx-envelope'></i>
+                <div>
+                  <span class="info-label">Email</span>
+                  <span class="info-value">javithabdul924@gmail.com</span>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class='bx bx-phone'></i>
+                <div>
+                  <span class="info-label">Phone</span>
+                  <span class="info-value">+91 6379748608</span>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class='bx bx-graduation'></i>
+                <div>
+                  <span class="info-label">Education</span>
+                  <span class="info-value">BE - Computer Science</span>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class='bx bx-check-circle'></i>
+                <div>
+                  <span class="info-label">Status</span>
+                  <span class="info-value">Open to Work</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="interests-wrap">
+              <span class="interest-tag">Website Development</span>
+              <span class="interest-tag">Frontend Development</span>
+              <span class="interest-tag">Artificial Intelligence</span>
+              <span class="interest-tag">Open Source</span>
+              <span class="interest-tag">UI Design</span>
+              <span class="interest-tag">Problem Solving</span>
+            </div>
+
+            <a href="#contact" class="btn btn-primary">
+              <i class='bx bx-message-detail'></i> Let's Connect
+            </a>
+          </div>
+        </div>
+
+        <!-- Extra Activities -->
+        <div class="activities reveal-up">
+          <h3 class="subsection-title">Beyond The Code</h3>
+          <div class="activities-grid">
+            <div class="activity-item"><i class='bx bx-code-block'></i><span>Building Personal Projects</span></div>
+            <div class="activity-item"><i class='bx bx-layer'></i><span>Learning Full Stack Development</span></div>
+            <div class="activity-item"><i class='bx bx-palette'></i><span>Exploring UI/UX Design</span></div>
+            <div class="activity-item"><i class='bx bx-trophy'></i><span>Practicing Coding Challenges</span></div>
+            <div class="activity-item"><i class='bx bx-group'></i><span>Technical Workshops</span></div>
+            <div class="activity-item"><i class='bx bx-tv'></i><span>Programming Tutorials</span></div>
+            <div class="activity-item"><i class='bx bx-bulb'></i><span>Continuous Self-Learning</span></div>
+            <div class="activity-item"><i class='bx bx-file'></i><span>Technical Documentation</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- SKILLS SECTION -->
+    <!-- ============================= -->
+    <section class="section section-alt" id="skills">
+      <div class="section-container">
+        <div class="section-header reveal-up">
+          <span class="section-eyebrow">What I Know</span>
+          <h2 class="section-title">Technical <span class="gradient-text">Skills</span></h2>
+        </div>
+
+        <div class="skills-bars reveal-up">
+          <div class="skill-bar-item">
+            <div class="skill-bar-head"><span>HTML5</span><span class="skill-percent">99%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="99"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-head"><span>CSS3</span><span class="skill-percent">95%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="95"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-head"><span>JavaScript (ES6)</span><span class="skill-percent">85%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="85"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-head"><span>Responsive Web Design</span><span class="skill-percent">98%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="99"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-head"><span>Python</span><span class="skill-percent">95%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="95"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-head"><span>Git &amp; GitHub</span><span class="skill-percent">78%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="78"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-head"><span>UI/UX Design</span><span class="skill-percent">75%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="75"></div>
+            </div>
+          </div>
+
+          <div class="skill-cards-grid">
+            <div class="skill-card reveal-up">
+              <div class="skill-card-icon"><i class='bx bx-git-branch'></i></div>
+              <h4>Version Control</h4>
+              <p>Git &amp; GitHub workflows</p>
+            </div>
+            <div class="skill-card reveal-up">
+              <div class="skill-card-icon"><i class='bx bx-code-curly'></i></div>
+              <h4>VS Code</h4>
+              <p>Efficient dev environment</p>
+            </div>
+            <div class="skill-card reveal-up">
+              <div class="skill-card-icon"><i class='bx bx-data'></i></div>
+              <h4>Data Structures</h4>
+              <p>Core algorithmic thinking</p>
+            </div>
+            <div class="skill-card reveal-up">
+              <div class="skill-card-icon"><i class='bx bx-cloud'></i></div>
+              <h4>REST API Basics</h4>
+              <p>Consuming &amp; testing APIs</p>
+            </div>
+            <div class="skill-card reveal-up">
+              <div class="skill-card-icon"><i class='bx bx-bug'></i></div>
+              <h4>Debugging</h4>
+              <p>Methodical problem solving</p>
+            </div>
+            <div class="skill-card reveal-up">
+              <div class="skill-card-icon"><i class='bx bx-sitemap'></i></div>
+              <h4>Algorithms</h4>
+              <p>Efficient logic design</p>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- PROJECTS SECTION -->
+    <!-- ============================= -->
+    <section class="section" id="projects">
+      <div class="section-container">
+        <div class="section-header reveal-up">
+          <span class="section-eyebrow">My Work</span>
+          <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+        </div>
+
+        <div class="projects-grid">
+
+          <article class="project-card reveal-up">
+            <div class="project-image ph-1">
+              <div class="project-overlay">
+                <a href="#" class="project-link" aria-label="View project"><i class='bx bx-link-external'></i></a>
+              </div>
+            </div>
+            <div class="project-body">
+              <span class="project-tag">Web Design</span>
+              <h3>Personal Portfolio Website</h3>
+              <p>A fully responsive personal portfolio with smooth scroll animations, glassmorphism UI and premium
+                micro-interactions.</p>
+              <div class="project-stack">
+                <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card project-card-featured reveal-up" id="luckytimesCard">
+            <div class="browser-mockup-header">
+              <div class="browser-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="browser-url-bar">
+                <i class='bx bx-lock-alt lock-icon'></i>
+                <span class="url-text">luckytimes.vercel.app</span>
+                <span class="live-badge"><span class="badge-pulse"></span> LIVE</span>
+              </div>
+              <div class="browser-actions">
+                <button class="browser-btn open-modal-btn" title="Expand Fullscreen Live Preview"
+                  aria-label="Expand Preview"><i class='bx bx-fullscreen'></i></button>
+                <a href="https://luckytimes.vercel.app" target="_blank" rel="noopener" class="browser-btn"
+                  title="Open in New Tab" aria-label="Open Site"><i class='bx bx-link-external'></i></a>
+              </div>
+            </div>
+            <div class="project-iframe-container">
+              <div class="iframe-loader" id="iframeLoader">
+                <i class='bx bx-loader-alt bx-spin'></i>
+                <span>Loading Live Site...</span>
+              </div>
+              <iframe src="https://luckytimes.vercel.app" title="Lucky Times Live Preview" class="project-iframe"
+                id="luckyIframe" loading="lazy">
+              </iframe>
+              <div class="project-overlay">
+                <div class="overlay-buttons">
+                  <button class="btn btn-primary btn-sm open-modal-btn">
+                    <i class='bx bx-expand-alt'></i> Full Preview
+                  </button>
+                  <a href="https://luckytimes.vercel.app" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+                    <i class='bx bx-link-external'></i> Open Site
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <span class="project-tag">E-Commerce UI</span>
+              <h3>Lucky Times Luxury Watch Store</h3>
+              <p>A luxury watch showroom website featuring an elegant UI, product catalog layout, refined typography,
+                and responsive design.</p>
+              <div class="project-stack">
+                <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Vercel</span>
+              </div>
+              <div class="project-card-actions">
+                <button class="btn btn-primary btn-sm open-modal-btn">
+                  <i class='bx bx-desktop'></i> Live Preview Modal
+                </button>
+                <a href="https://luckytimes.vercel.app" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+                  <i class='bx bx-link-external'></i> Visit Site
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal-up">
+            <div class="project-image ph-3">
+              <div class="project-overlay">
+                <a href="#" class="project-link" aria-label="View project"><i class='bx bx-link-external'></i></a>
+              </div>
+            </div>
+            <div class="project-body">
+              <span class="project-tag">Python</span>
+              <h3>Student Management System</h3>
+              <p>A Python-based desktop application to manage student records with add, update, search and delete
+                functionality.</p>
+              <div class="project-stack">
+                <span>Python</span><span>Tkinter</span><span>SQLite</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal-up">
+            <div class="project-image ph-4">
+              <div class="project-overlay">
+                <a href="#" class="project-link" aria-label="View project"><i class='bx bx-link-external'></i></a>
+              </div>
+            </div>
+            <div class="project-body">
+              <span class="project-tag">Landing Page</span>
+              <h3>Responsive Landing Page</h3>
+              <p>A modern, conversion-focused landing page built with clean semantic markup and scroll-triggered
+                animations.</p>
+              <div class="project-stack">
+                <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- SERVICES SECTION -->
+    <!-- ============================= -->
+    <section class="section section-alt" id="services">
+      <div class="section-container">
+        <div class="section-header reveal-up">
+          <span class="section-eyebrow">How I Can Help</span>
+          <h2 class="section-title">My <span class="gradient-text">Services</span></h2>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card reveal-up">
+            <div class="service-number">01</div>
+            <div class="service-icon"><i class='bx bx-pen'></i></div>
+            <h3>Web Design</h3>
+            <p>Clean, modern and purposeful interface design tailored to your brand and audience.</p>
+          </div>
+          <div class="service-card reveal-up">
+            <div class="service-number">02</div>
+            <div class="service-icon"><i class='bx bx-devices'></i></div>
+            <h3>Responsive Development</h3>
+            <p>Websites that look and work flawlessly across desktop, tablet and mobile devices.</p>
+          </div>
+          <div class="service-card reveal-up">
+            <div class="service-number">03</div>
+            <div class="service-icon"><i class='bx bx-code-alt'></i></div>
+            <h3>Frontend Development</h3>
+            <p>Interactive, performant interfaces built with clean HTML, CSS and JavaScript.</p>
+          </div>
+          <div class="service-card reveal-up">
+            <div class="service-number">04</div>
+            <div class="service-icon"><i class='bx bx-id-card'></i></div>
+            <h3>Portfolio Creation</h3>
+            <p>Personal brand websites that help you stand out to recruiters and clients.</p>
+          </div>
+          <div class="service-card reveal-up">
+            <div class="service-number">05</div>
+            <div class="service-icon"><i class='bx bx-refresh'></i></div>
+            <h3>UI Redesign</h3>
+            <p>Refreshing outdated interfaces into modern, engaging digital experiences.</p>
+          </div>
+          <div class="service-card reveal-up">
+            <div class="service-number">06</div>
+            <div class="service-icon"><i class='bx bx-tachometer'></i></div>
+            <h3>Performance Optimization</h3>
+            <p>Faster load times and smoother interactions through optimized front-end code.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- TIMELINE SECTION -->
+    <!-- ============================= -->
+    <section class="section" id="journey">
+      <div class="section-container">
+        <div class="section-header reveal-up">
+          <span class="section-eyebrow">My Journey</span>
+          <h2 class="section-title">Growth <span class="gradient-text">Timeline</span></h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item reveal-up">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">2024</span>
+              <h4>Started Learning Programming</h4>
+              <p>Took my first steps into the world of programming and computer science fundamentals.</p>
+            </div>
+          </div>
+          <div class="timeline-item reveal-up">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">2025</span>
+              <h4>Learned HTML, CSS &amp; JavaScript</h4>
+              <p>Built a strong foundation in front-end web development and core web technologies.</p>
+            </div>
+          </div>
+          <div class="timeline-item reveal-up">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">2026</span>
+              <h4>Building Professional Projects</h4>
+              <p>Currently building real-world projects and sharpening my full-stack skills.</p>
+            </div>
+          </div>
+          <div class="timeline-item reveal-up">
+            <div class="timeline-dot future-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">Future</span>
+              <h4>Full Stack Web Developer</h4>
+              <p>Working towards becoming a professional full stack developer building impactful products.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- EDUCATION SECTION -->
+    <!-- ============================= -->
+    <section class="section section-alt" id="education">
+      <div class="section-container">
+        <div class="section-header reveal-up">
+          <span class="section-eyebrow">Academic Background</span>
+          <h2 class="section-title">Education</h2>
+        </div>
+
+        <div class="education-list">
+          <div class="education-item reveal-up">
+            <div class="education-icon"><i class='bx bx-graduation'></i></div>
+            <div class="education-details">
+              <h3>Bachelor of Engineering — Computer Science and Engineering</h3>
+              <span class="education-meta">Currently Pursuing</span>
+              <p>Studying core subjects including Data Structures, Operating Systems, DBMS, Artificial Intelligence,
+                Theory of Computation, Digital Principles and Computer Organization.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certificates -->
+        <h3 class="subsection-title">Certificates</h3>
+        <div class="cert-grid">
+          <div class="cert-card reveal-up">
+            <i class='bx bxs-certification'></i>
+            <h4>Web Development Fundamentals</h4>
+            <span>HTML, CSS &amp; JavaScript</span>
+          </div>
+          <div class="cert-card reveal-up">
+            <i class='bx bxs-certification'></i>
+            <h4>Python Programming</h4>
+            <span>Core Python &amp; Libraries</span>
+          </div>
+          <div class="cert-card reveal-up">
+            <i class='bx bxs-certification'></i>
+            <h4>Database Fundamentals</h4>
+            <span>SQL &amp; Data Modeling</span>
+          </div>
+        </div>
+
+        <!-- Achievements -->
+        <h3 class="subsection-title">Achievements</h3>
+        <div class="achievement-grid">
+          <div class="achievement-card reveal-up">
+            <i class='bx bx-trophy'></i>
+            <div>
+              <h4>Workshop Participation</h4>
+              <p>Actively participated in multiple technical workshops and coding sessions.</p>
+            </div>
+          </div>
+          <div class="achievement-card reveal-up">
+            <i class='bx bx-medal'></i>
+            <div>
+              <h4>Consistent Self-Learner</h4>
+              <p>Continuously building projects and expanding technical skill set independently.</p>
+            </div>
+          </div>
+          <div class="achievement-card reveal-up">
+            <i class='bx bx-group'></i>
+            <div>
+              <h4>Team Collaboration</h4>
+              <p>Strong presentation and documentation skills developed through team projects.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- TESTIMONIALS SECTION -->
+    <!-- ============================= -->
+    <section class="section" id="testimonials">
+      <div class="section-container">
+        <div class="section-header reveal-up">
+          <span class="section-eyebrow">Kind Words</span>
+          <h2 class="section-title">Testimonials</h2>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card reveal-up">
+            <i class='bx bxs-quote-alt-left quote-icon'></i>
+            <p>"Javith has a great eye for detail and always delivers clean, well-structured code. A pleasure to
+              collaborate with."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">RM</div>
+              <div>
+                <h5>Ramesh Menon</h5>
+                <span>Project Mentor</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card reveal-up">
+            <i class='bx bxs-quote-alt-left quote-icon'></i>
+            <p>"His dedication to learning new technologies and solving problems methodically really stands out among
+              peers."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">SK</div>
+              <div>
+                <h5>Sanjay Kumar</h5>
+                <span>Classmate &amp; Collaborator</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card reveal-up">
+            <i class='bx bxs-quote-alt-left quote-icon'></i>
+            <p>"The portfolio he built for our shop looked incredibly professional. Impressive design sense for a
+              student developer."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">FA</div>
+              <div>
+                <h5>Faisal Ahmed</h5>
+                <span>Client</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- CONTACT SECTION -->
+    <!-- ============================= -->
+    <section class="section section-alt" id="contact">
+      <div class="section-container">
+        <div class="section-header reveal-up">
+          <span class="section-eyebrow">Get In Touch</span>
+          <h2 class="section-title">Let's Work <span class="gradient-text">Together</span></h2>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info reveal-left">
+            <h3>Contact Information</h3>
+            <p>Have a project in mind or just want to say hello? Fill out the form or reach out directly — I'd love to
+              hear from you.</p>
+
+            <div class="contact-detail">
+              <div class="contact-detail-icon"><i class='bx bx-envelope'></i></div>
+              <div>
+                <span>Email</span>
+                <a href="mailto:javithabdul924@gmail.com">javithabdul924@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon"><i class='bx bx-phone'></i></div>
+              <div>
+                <span>Phone</span>
+                <a href="tel:+916379748608">+91 6379748608</a>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon"><i class='bx bxl-whatsapp'></i></div>
+              <div>
+                <span>WhatsApp</span>
+                <a href="https://wa.me/916379748608" target="_blank" rel="noopener">Chat Now</a>
+              </div>
+            </div>
+
+            <div class="contact-socials">
+              <a href="https://github.com/" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub"><i
+                  class='bx bxl-github'></i></a>
+              <a href="https://linkedin.com/" target="_blank" rel="noopener" class="social-icon"
+                aria-label="LinkedIn"><i class='bx bxl-linkedin-square'></i></a>
+              <a href="https://instagram.com/" target="_blank" rel="noopener" class="social-icon"
+                aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+            </div>
+          </div>
+
+          <form class="contact-form reveal-right" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" id="name" name="name" required>
+                <label for="name">Your Name</label>
+                <span class="form-error" id="nameError"></span>
+              </div>
+              <div class="form-group">
+                <input type="email" id="email" name="email" required>
+                <label for="email">Your Email</label>
+                <span class="form-error" id="emailError"></span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <input type="tel" id="phone" name="phone">
+                <label for="phone">Phone Number</label>
+                <span class="form-error" id="phoneError"></span>
+              </div>
+              <div class="form-group">
+                <input type="text" id="subject" name="subject" required>
+                <label for="subject">Subject</label>
+                <span class="form-error" id="subjectError"></span>
+              </div>
+            </div>
+            <div class="form-group form-group-full">
+              <textarea id="message" name="message" rows="5" required></textarea>
+              <label for="message">Your Message</label>
+              <span class="form-error" id="messageError"></span>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary" id="submitBtn">
+                <i class='bx bx-send'></i> <span>Send Message</span>
+              </button>
+              <a href="https://wa.me/916379748608" target="_blank" rel="noopener" class="btn btn-whatsapp">
+                <i class='bx bxl-whatsapp'></i> WhatsApp Me
+              </a>
+            </div>
+
+            <div class="form-success" id="formSuccess">
+              <i class='bx bx-check-circle'></i> Message sent successfully! I'll get back to you soon.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================= -->
+  <!-- FOOTER -->
+  <!-- ============================= -->
+  <footer class="footer">
+    <div class="footer-container">
+      <a href="#home" class="footer-logo">AJ<span class="nav-logo-dot">.</span></a>
+      <div class="footer-socials">
+        <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub"><i
+            class='bx bxl-github'></i></a>
+        <a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><i
+            class='bx bxl-linkedin-square'></i></a>
+        <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i
+            class='bx bxl-instagram'></i></a>
+        <a href="mailto:javithabdul924@gmail.com" aria-label="Email"><i class='bx bx-envelope'></i></a>
+        <a href="https://wa.me/916379748608" target="_blank" rel="noopener" aria-label="WhatsApp"><i
+            class='bx bxl-whatsapp'></i></a>
+      </div>
+      <p class="footer-copyright">Copyright &copy; 2026 A. Abdul Javith. All Rights Reserved.</p>
+      <p class="footer-credit">Designed &amp; Developed with <i class='bx bxs-heart'></i> using HTML, CSS &amp;
+        JavaScript</p>
+    </div>
+  </footer>
+
+  <!-- ============================= -->
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <!-- ============================= -->
+  <a href="https://wa.me/916379748608" target="_blank" rel="noopener" class="whatsapp-float"
+    aria-label="Chat on WhatsApp">
+    <i class='bx bxl-whatsapp'></i>
+  </a>
+
+  <!-- ============================= -->
+  <!-- BACK TO TOP BUTTON -->
+  <!-- ============================= -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class='bx bx-up-arrow-alt'></i>
+  </button>
+
+  <!-- ============================= -->
+  <!-- LIVE PREVIEW MODAL -->
+  <!-- ============================= -->
+  <div class="preview-modal-backdrop" id="previewModal">
+    <div class="preview-modal-container">
+      <div class="preview-modal-header">
+        <div class="modal-title-info">
+          <span class="modal-dot-live"></span>
+          <h4>Lucky Times Website — Live Preview</h4>
+          <a href="https://luckytimes.vercel.app" target="_blank" rel="noopener" class="modal-url-tag"><i
+              class='bx bx-link'></i> luckytimes.vercel.app</a>
+        </div>
+        <div class="device-switcher">
+          <button class="device-btn active" data-device="desktop" title="Desktop View (100% width)"
+            aria-label="Desktop View">
+            <i class='bx bx-desktop'></i> <span>Desktop</span>
+          </button>
+          <button class="device-btn" data-device="tablet" title="Tablet View (768px width)" aria-label="Tablet View">
+            <i class='bx bx-tab'></i> <span>Tablet</span>
+          </button>
+          <button class="device-btn" data-device="mobile" title="Mobile View (380px width)" aria-label="Mobile View">
+            <i class='bx bx-mobile-alt'></i> <span>Mobile</span>
+          </button>
+        </div>
+        <div class="modal-actions">
+          <a href="https://luckytimes.vercel.app" target="_blank" rel="noopener"
+            class="btn btn-outline btn-sm modal-visit-btn" title="Open site in new tab">
+            <i class='bx bx-link-external'></i> <span>Open Site</span>
+          </a>
+          <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal"><i class='bx bx-x'></i></button>
+        </div>
+      </div>
+      <div class="preview-modal-body">
+        <div class="modal-iframe-wrapper device-desktop" id="modalIframeWrapper">
+          <div class="modal-iframe-loader" id="modalIframeLoader">
+            <i class='bx bx-loader-alt bx-spin'></i>
+            <span>Loading Live Preview...</span>
+          </div>
+          <iframe src="about:blank" data-src="https://luckytimes.vercel.app" id="modalIframe"
+            title="Lucky Times Live Website Preview"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
