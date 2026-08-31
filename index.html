@@ -61,11 +61,18 @@
         <a href="#projects" class="nav-link" data-nav="projects">Projects</a>
         <a href="#services" class="nav-link" data-nav="services">Services</a>
         <a href="#education" class="nav-link" data-nav="education">Education</a>
+        <a href="#certifications" class="nav-link" data-nav="certifications">Certifications</a>
         <a href="#testimonials" class="nav-link" data-nav="testimonials">Testimonials</a>
         <a href="#contact" class="nav-link" data-nav="contact">Contact</a>
       </nav>
 
       <a href="#contact" class="nav-cta">Let's Talk</a>
+
+      <!-- Theme Switcher (Dark / Light Mode) -->
+      <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Light / Dark Mode" title="Toggle Light / Dark Mode">
+        <i class='bx bx-sun sun-icon'></i>
+        <i class='bx bx-moon moon-icon'></i>
+      </button>
 
       <div class="nav-toggle" id="navToggle">
         <span></span><span></span><span></span>
@@ -88,7 +95,7 @@
         </div>
 
         <h1 class="hero-title reveal-up" style="--delay:0.1s">
-          Hi, I'm <span class="gradient-text">A. Abdul Javith</span>
+          Hi, I'm <span class="gradient-text">Abdul Javith</span> 
         </h1>
 
         <h2 class="hero-subtitle reveal-up" style="--delay:0.2s">
@@ -97,16 +104,15 @@
 
         <p class="hero-desc reveal-up" style="--delay:0.3s">
           BE Computer Science &amp; Engineering student crafting beautiful, responsive
-          and user-friendly digital experiences. Passionate about clean code,
-          thoughtful design, and turning ideas into impactfull products.
+          and user-friendly digital experiences. I build modern and interactive web experiences.
         </p>
 
         <div class="hero-actions reveal-up" style="--delay:0.4s">
-          <a href="#projects" class="btn btn-primary">
-            <i class='bx bx-rocket'></i> View My Work
+          <a href="#projects" class="btn btn-primary hero-btn-animate">
+            <i class='bx bx-rocket'></i> <span>View My Work</span>
           </a>
-          <a href="#" class="btn btn-outline" id="resumeBtn">
-            <i class='bx bx-download'></i> Download Resume
+          <a href="#contact" class="btn btn-outline hero-btn-animate">
+            <i class='bx bx-paper-plane'></i> <span>Contact Me</span>
           </a>
         </div>
 
@@ -186,7 +192,7 @@
               I am A. Abdul Javith, currently studying Bachelor of Engineering in
               Computer Science and Engineering. I am passionate about creating
               beautiful, responsive and user-friendly websites. I enjoy learning
-              new technologies, solving programming problems and continuously
+              new technologies, solving programming problem and continuously
               improving my skills.
             </p>
             <p class="about-text">
@@ -311,40 +317,96 @@
               <div class="skill-bar-fill" data-width="75"></div>
             </div>
           </div>
+        </div>
 
-          <div class="skill-cards-grid">
-            <div class="skill-card reveal-up">
-              <div class="skill-card-icon"><i class='bx bx-git-branch'></i></div>
-              <h4>Version Control</h4>
-              <p>Git &amp; GitHub workflows</p>
+        <!-- Tech Stack with Animated Icons Section -->
+        <div class="tech-stack-animated-container reveal-up">
+          <h3 class="tech-stack-title"><i class='bx bx-code-alt'></i> Core Tech Stack</h3>
+          <div class="tech-stack-grid">
+            <div class="tech-card tech-html">
+              <div class="tech-icon-wrap"><i class='bx bxl-html5'></i></div>
+              <span class="tech-name">HTML5</span>
+              <div class="tech-fire-progress">
+                <div class="fire-bar" style="width: 98%;"></div>
+              </div>
+              <span class="tech-badge">🔥 Progress 98%</span>
             </div>
-            <div class="skill-card reveal-up">
-              <div class="skill-card-icon"><i class='bx bx-code-curly'></i></div>
-              <h4>VS Code</h4>
-              <p>Efficient dev environment</p>
+
+            <div class="tech-card tech-css">
+              <div class="tech-icon-wrap"><i class='bx bxl-css3'></i></div>
+              <span class="tech-name">CSS3</span>
+              <div class="tech-fire-progress">
+                <div class="fire-bar bar-css" style="width: 95%;"></div>
+              </div>
+              <span class="tech-badge">🎨 Styling 95%</span>
             </div>
-            <div class="skill-card reveal-up">
-              <div class="skill-card-icon"><i class='bx bx-data'></i></div>
-              <h4>Data Structures</h4>
-              <p>Core algorithmic thinking</p>
+
+            <div class="tech-card tech-js">
+              <div class="tech-icon-wrap"><i class='bx bxl-javascript'></i></div>
+              <span class="tech-name">JavaScript</span>
+              <div class="glow-pulse-ring"></div>
+              <span class="tech-badge">⚡ Glowing Power</span>
             </div>
-            <div class="skill-card reveal-up">
-              <div class="skill-card-icon"><i class='bx bx-cloud'></i></div>
-              <h4>REST API Basics</h4>
-              <p>Consuming &amp; testing APIs</p>
+
+            <div class="tech-card tech-python">
+              <div class="tech-icon-wrap"><i class='bx bxl-python'></i></div>
+              <span class="tech-name">Python</span>
+              <span class="tech-badge">🐍 Smooth Snake Hover</span>
             </div>
-            <div class="skill-card reveal-up">
-              <div class="skill-card-icon"><i class='bx bx-bug'></i></div>
-              <h4>Debugging</h4>
-              <p>Methodical problem solving</p>
+
+            <div class="tech-card tech-java">
+              <div class="tech-icon-wrap"><i class='bx bxl-java'></i></div>
+              <span class="tech-name">Java</span>
+              <span class="tech-badge">☕ Steaming Code</span>
             </div>
-            <div class="skill-card reveal-up">
-              <div class="skill-card-icon"><i class='bx bx-sitemap'></i></div>
-              <h4>Algorithms</h4>
-              <p>Efficient logic design</p>
+
+            <div class="tech-card tech-sql">
+              <div class="tech-icon-wrap"><i class='bx bx-data'></i></div>
+              <span class="tech-name">SQL</span>
+              <span class="tech-badge">🗄️ Database Query</span>
+            </div>
+
+            <div class="tech-card tech-git">
+              <div class="tech-icon-wrap"><i class='bx bxl-git'></i></div>
+              <span class="tech-name">Git</span>
+              <span class="tech-badge">🌿 Branch Control</span>
             </div>
           </div>
         </div>
+
+        <div class="skill-cards-grid">
+          <div class="skill-card reveal-up">
+            <div class="skill-card-icon"><i class='bx bx-git-branch'></i></div>
+            <h4>Version Control</h4>
+            <p>Git &amp; GitHub workflows</p>
+          </div>
+          <div class="skill-card reveal-up">
+            <div class="skill-card-icon"><i class='bx bx-code-curly'></i></div>
+            <h4>VS Code</h4>
+            <p>Efficient dev environment</p>
+          </div>
+          <div class="skill-card reveal-up">
+            <div class="skill-card-icon"><i class='bx bx-data'></i></div>
+            <h4>Data Structures</h4>
+            <p>Core algorithmic thinking</p>
+          </div>
+          <div class="skill-card reveal-up">
+            <div class="skill-card-icon"><i class='bx bx-cloud'></i></div>
+            <h4>REST API Basics</h4>
+            <p>Consuming &amp; testing APIs</p>
+          </div>
+          <div class="skill-card reveal-up">
+            <div class="skill-card-icon"><i class='bx bx-bug'></i></div>
+            <h4>Debugging</h4>
+            <p>Methodical problem solving</p>
+          </div>
+          <div class="skill-card reveal-up">
+            <div class="skill-card-icon"><i class='bx bx-sitemap'></i></div>
+            <h4>Algorithms</h4>
+            <p>Efficient logic design</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ============================= -->
@@ -576,7 +638,7 @@
       <div class="section-container">
         <div class="section-header reveal-up">
           <span class="section-eyebrow">Academic Background</span>
-          <h2 class="section-title">Education</h2>
+          <h2 class="section-title">Educations</h2>
         </div>
 
         <div class="education-list">
@@ -590,27 +652,7 @@
             </div>
           </div>
         </div>
-
-        <!-- Certificates -->
-        <h3 class="subsection-title">Certificates</h3>
-        <div class="cert-grid">
-          <div class="cert-card reveal-up">
-            <i class='bx bxs-certification'></i>
-            <h4>Web Development Fundamentals</h4>
-            <span>HTML, CSS &amp; JavaScript</span>
-          </div>
-          <div class="cert-card reveal-up">
-            <i class='bx bxs-certification'></i>
-            <h4>Python Programming</h4>
-            <span>Core Python &amp; Libraries</span>
-          </div>
-          <div class="cert-card reveal-up">
-            <i class='bx bxs-certification'></i>
-            <h4>Database Fundamentals</h4>
-            <span>SQL &amp; Data Modeling</span>
-          </div>
-        </div>
-
+        
         <!-- Achievements -->
         <h3 class="subsection-title">Achievements</h3>
         <div class="achievement-grid">
@@ -640,52 +682,218 @@
     </section>
 
     <!-- ============================= -->
-    <!-- TESTIMONIALS SECTION -->
+    <!-- CERTIFICATIONS SECTION -->
     <!-- ============================= -->
-    <section class="section" id="testimonials">
+    <section class="section cert-section" id="certifications">
       <div class="section-container">
         <div class="section-header reveal-up">
-          <span class="section-eyebrow">Kind Words</span>
-          <h2 class="section-title">Testimonials</h2>
+          <span class="section-eyebrow"><i class='bx bx-award'></i> Verified Credentials</span>
+          <h2 class="section-title">Certifications</h2>
+          <p class="section-desc">Official certifications achieved from MongoDB University &amp; Global Learning Platforms.</p>
         </div>
 
-        <div class="testimonials-grid">
-          <div class="testimonial-card reveal-up">
-            <i class='bx bxs-quote-alt-left quote-icon'></i>
-            <p>"Javith has a great eye for detail and always delivers clean, well-structured code. A pleasure to
-              collaborate with."</p>
-            <div class="testimonial-author">
-              <div class="author-avatar">RM</div>
-              <div>
-                <h5>Ramesh Menon</h5>
-                <span>Project Mentor</span>
+        <!-- Premium Flip-Card Viewer Deck -->
+        <div class="cert-deck-wrapper reveal-up">
+          <div class="cert-3d-scene">
+            <!-- Cert Card 1 -->
+            <div class="cert-card-3d active" data-cert="0">
+              <div class="cert-card-inner">
+                <!-- Front Side -->
+                <div class="cert-card-front">
+                  <div class="cert-badge-ribbon"><i class='bx bxs-badge-check'></i> VERIFIED</div>
+                  <div class="cert-img-container">
+                    <img src="cert_rag_mongodb.png" alt="RAG with MongoDB Certificate" loading="lazy">
+                    <div class="cert-glass-overlay">
+                      <div class="flip-hint-badge">
+                        <i class='bx bx-refresh'></i> Click or Flip to View Details
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cert-mini-meta">
+                    <h4>RAG with MongoDB</h4>
+                    <span class="cert-issuer"><i class='bx bxs-institution'></i> MongoDB University</span>
+                  </div>
+                </div>
+                <!-- Back Side -->
+                <div class="cert-card-back">
+                  <div class="cert-back-content">
+                    <div class="cert-back-header">
+                      <i class='bx bx-check-shield cert-shield-icon'></i>
+                      <div>
+                        <h3>RAG with MongoDB</h3>
+                        <p class="cert-org">MongoDB University</p>
+                      </div>
+                    </div>
+                    <div class="cert-details-grid">
+                      <div class="cert-detail-item">
+                        <span class="detail-label">Recipient</span>
+                        <span class="detail-val">Abdul Javith</span>
+                      </div>
+                      <div class="cert-detail-item">
+                        <span class="detail-label">Date Issued</span>
+                        <span class="detail-val">07-21-2026</span>
+                      </div>
+                      <div class="cert-detail-item">
+                        <span class="detail-label">Credential ID</span>
+                        <span class="detail-val code-font">MDBdx0ovivumg</span>
+                      </div>
+                      <div class="cert-detail-item">
+                        <span class="detail-label">Signatory</span>
+                        <span class="detail-val">Raghu Viswanathan (VP Education)</span>
+                      </div>
+                    </div>
+                    <div class="cert-skills-tags">
+                      <span><i class='bx bx-code-alt'></i> RAG Architecture</span>
+                      <span><i class='bx bx-data'></i> Vector Search</span>
+                      <span><i class='bx bx-brain'></i> AI Data Pipelines</span>
+                    </div>
+                    <div class="cert-back-actions">
+                      <button class="btn btn-primary btn-sm flip-back-btn"><i class='bx bx-undo'></i> Flip Back</button>
+                      <a href="cert_rag_mongodb.png" target="_blank" class="btn btn-outline btn-sm"><i class='bx bx-expand'></i> View Full Size</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cert Card 2 -->
+            <div class="cert-card-3d" data-cert="1">
+              <div class="cert-card-inner">
+                <!-- Front Side -->
+                <div class="cert-card-front">
+                  <div class="cert-badge-ribbon"><i class='bx bxs-badge-check'></i> VERIFIED</div>
+                  <div class="cert-img-container">
+                    <img src="cert_mongodb_basics.png" alt="MongoDB Basics for Students Certificate" loading="lazy">
+                    <div class="cert-glass-overlay">
+                      <div class="flip-hint-badge">
+                        <i class='bx bx-refresh'></i> Click or Flip to View Details
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cert-mini-meta">
+                    <h4>MongoDB Basics for Students</h4>
+                    <span class="cert-issuer"><i class='bx bxs-institution'></i> MongoDB University</span>
+                  </div>
+                </div>
+                <!-- Back Side -->
+                <div class="cert-card-back">
+                  <div class="cert-back-content">
+                    <div class="cert-back-header">
+                      <i class='bx bx-check-shield cert-shield-icon'></i>
+                      <div>
+                        <h3>MongoDB Basics for Students</h3>
+                        <p class="cert-org">MongoDB University</p>
+                      </div>
+                    </div>
+                    <div class="cert-details-grid">
+                      <div class="cert-detail-item">
+                        <span class="detail-label">Recipient</span>
+                        <span class="detail-val">Abdul Javith</span>
+                      </div>
+                      <div class="cert-detail-item">
+                        <span class="detail-label">Date Issued</span>
+                        <span class="detail-val">07-18-2026</span>
+                      </div>
+                      <div class="cert-detail-item">
+                        <span class="detail-label">Credential ID</span>
+                        <span class="detail-val code-font">MDBd4bf0gvcv7</span>
+                      </div>
+                      <div class="cert-detail-item">
+                        <span class="detail-label">Signatory</span>
+                        <span class="detail-val">Raghu Viswanathan (VP Education)</span>
+                      </div>
+                    </div>
+                    <div class="cert-skills-tags">
+                      <span><i class='bx bx-data'></i> NoSQL Databases</span>
+                      <span><i class='bx bx-layer'></i> CRUD Operations</span>
+                      <span><i class='bx bx-slider-alt'></i> Aggregations</span>
+                    </div>
+                    <div class="cert-back-actions">
+                      <button class="btn btn-primary btn-sm flip-back-btn"><i class='bx bx-undo'></i> Flip Back</button>
+                      <a href="cert_mongodb_basics.png" target="_blank" class="btn btn-outline btn-sm"><i class='bx bx-expand'></i> View Full Size</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cert Card 3 -->
+            <div class="cert-card-3d" data-cert="2">
+              <div class="cert-card-inner">
+                <!-- Front Side -->
+                <div class="cert-card-front">
+                  <div class="cert-badge-ribbon"><i class='bx bxs-badge-check'></i> VERIFIED</div>
+                  <div class="cert-img-container">
+                    <img src="cert_ai_data_strategy.png" alt="AI Data Strategy with MongoDB Certificate" loading="lazy">
+                    <div class="cert-glass-overlay">
+                      <div class="flip-hint-badge">
+                        <i class='bx bx-refresh'></i> Click or Flip to View Details
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cert-mini-meta">
+                    <h4>AI Data Strategy with MongoDB</h4>
+                    <span class="cert-issuer"><i class='bx bxs-institution'></i> MongoDB University</span>
+                  </div>
+                </div>
+                <!-- Back Side -->
+                <div class="cert-card-back">
+                  <div class="cert-back-content">
+                    <div class="cert-back-header">
+                      <i class='bx bx-check-shield cert-shield-icon'></i>
+                      <div>
+                        <h3>AI Data Strategy with MongoDB</h3>
+                        <p class="cert-org">MongoDB University</p>
+                      </div>
+                    </div>
+                    <div class="cert-details-grid">
+                      <div class="cert-detail-item">
+                        <span class="detail-label">Recipient</span>
+                        <span class="detail-val">Abdul Javith</span>
+                      </div>
+                      <div class="cert-detail-item">
+                        <span class="detail-label">Date Issued</span>
+                        <span class="detail-val">08-15-2026</span>
+                      </div>
+                      <div class="cert-detail-item">
+                        <span class="detail-label">Credential ID</span>
+                        <span class="detail-val code-font">MDBhukc2xeb0z</span>
+                      </div>
+                      <div class="cert-detail-item">
+                        <span class="detail-label">Signatory</span>
+                        <span class="detail-val">Raghu Viswanathan (VP Education)</span>
+                      </div>
+                    </div>
+                    <div class="cert-skills-tags">
+                      <span><i class='bx bx-chip'></i> AI Data Strategy</span>
+                      <span><i class='bx bx-cog'></i> GenAI Workflows</span>
+                      <span><i class='bx bx-server'></i> Enterprise Data Architecture</span>
+                    </div>
+                    <div class="cert-back-actions">
+                      <button class="btn btn-primary btn-sm flip-back-btn"><i class='bx bx-undo'></i> Flip Back</button>
+                      <a href="cert_ai_data_strategy.png" target="_blank" class="btn btn-outline btn-sm"><i class='bx bx-expand'></i> View Full Size</a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="testimonial-card reveal-up">
-            <i class='bx bxs-quote-alt-left quote-icon'></i>
-            <p>"His dedication to learning new technologies and solving problems methodically really stands out among
-              peers."</p>
-            <div class="testimonial-author">
-              <div class="author-avatar">SK</div>
-              <div>
-                <h5>Sanjay Kumar</h5>
-                <span>Classmate &amp; Collaborator</span>
-              </div>
+
+          <!-- Interactive Deck Navigation Controls -->
+          <div class="cert-controls">
+            <button class="cert-nav-btn prev-cert-btn" aria-label="Previous Certificate"><i class='bx bx-chevron-left'></i></button>
+            
+            <div class="cert-dots">
+              <span class="cert-dot active" data-index="0" title="RAG with MongoDB"></span>
+              <span class="cert-dot" data-index="1" title="MongoDB Basics for Students"></span>
+              <span class="cert-dot" data-index="2" title="AI Data Strategy with MongoDB"></span>
             </div>
+
+            <button class="btn btn-outline btn-sm cert-manual-flip-btn" title="Flip Current Card"><i class='bx bx-refresh'></i> <span>Flip Details</span></button>
+
+            <button class="cert-nav-btn next-cert-btn" aria-label="Next Certificate"><i class='bx bx-chevron-right'></i></button>
           </div>
-          <div class="testimonial-card reveal-up">
-            <i class='bx bxs-quote-alt-left quote-icon'></i>
-            <p>"The portfolio he built for our shop looked incredibly professional. Impressive design sense for a
-              student developer."</p>
-            <div class="testimonial-author">
-              <div class="author-avatar">FA</div>
-              <div>
-                <h5>Faisal Ahmed</h5>
-                <span>Client</span>
-              </div>
-            </div>
-          </div>
+          <p class="cert-hint-text"><i class='bx bx-info-circle'></i> Click the card or "Flip Details" to toggle credential verification info</p>
         </div>
       </div>
     </section>
@@ -867,6 +1075,52 @@
           <iframe src="about:blank" data-src="https://luckytimes.vercel.app" id="modalIframe"
             title="Lucky Times Live Website Preview"></iframe>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================= -->
+  <!-- AI PORTFOLIO ASSISTANT CHATBOT -->
+  <!-- ============================= -->
+  <div class="ai-chatbot-container" id="aiChatbot">
+    <button class="ai-chatbot-toggle" id="aiChatbotToggle" aria-label="Toggle AI Assistant" title="Chat with Abdul's AI Assistant">
+      <div class="ai-bot-avatar">🤖</div>
+      <span class="ai-bot-pulse"></span>
+      <span class="ai-bot-close-icon"><i class='bx bx-x'></i></span>
+    </button>
+
+    <div class="ai-chatbot-window" id="aiChatbotWindow">
+      <div class="ai-chat-header">
+        <div class="ai-header-info">
+          <div class="ai-header-avatar">🤖</div>
+          <div>
+            <h4>Abdul's AI Assistant <span class="online-dot"></span></h4>
+            <p>Ask about skills, projects &amp; contact!</p>
+          </div>
+        </div>
+        <button class="ai-chat-close" id="aiChatClose" aria-label="Close Chat"><i class='bx bx-x'></i></button>
+      </div>
+
+      <div class="ai-chat-messages" id="aiChatMessages">
+        <div class="ai-msg bot">
+          <div class="msg-bubble">
+             Hi! I'm <strong>Abdul's Portfolio Assistant</strong>.<br>
+            Ask me about his skills, projects, certifications, and experience! 
+          </div>
+          <span class="msg-time">Just now</span>
+        </div>
+      </div>
+
+      <div class="ai-chat-suggestions">
+        <button class="suggestion-chip" data-query="What are Abdul's top skills?">💡 Top Skills</button>
+        <button class="suggestion-chip" data-query="Tell me about his projects">💻 Projects</button>
+        <button class="suggestion-chip" data-query="Show certifications">📜 Certifications</button>
+        <button class="suggestion-chip" data-query="How to contact Abdul?">📞 Contact Info</button>
+      </div>
+
+      <div class="ai-chat-input-area">
+        <input type="text" id="aiChatInput" placeholder="Ask anything about Abdul..." autocomplete="off">
+        <button id="aiSendBtn" aria-label="Send Message"><i class='bx bx-send'></i></button>
       </div>
     </div>
   </div>

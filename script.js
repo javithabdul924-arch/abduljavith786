@@ -226,6 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
      ============================= */
   const typedTextEl = document.getElementById('typedText');
   const phrases = [
+    'Full Stack Developer',
     'Future Full Stack Web Developer',
     'Front-End Developer',
     'Python Learner',
@@ -535,6 +536,299 @@ document.addEventListener('DOMContentLoaded', () => {
       if (modalIframeWrapper) {
         modalIframeWrapper.className = `modal-iframe-wrapper device-${device}`;
       }
+    });
+  });
+
+
+  /* ============================= 
+     13. CERTIFICATIONS 3D FLIP VIEWER & DECK SLIDER
+     ============================= */
+  const certCards = document.querySelectorAll('.cert-card-3d');
+  const certDots = document.querySelectorAll('.cert-dot');
+  const prevCertBtn = document.querySelector('.prev-cert-btn');
+  const nextCertBtn = document.querySelector('.next-cert-btn');
+  const manualFlipBtn = document.querySelector('.cert-manual-flip-btn');
+  let currentCertIndex = 0;
+
+  function showCertIndex(index) {
+    if (certCards.length === 0) return;
+    
+    // Normalize index
+    if (index < 0) index = certCards.length - 1;
+    if (index >= certCards.length) index = 0;
+    currentCertIndex = index;
+
+    // Reset flips and update active card
+    certCards.forEach((card, idx) => {
+      card.classList.remove('flipped');
+      if (idx === currentCertIndex) {
+        card.classList.add('active');
+      } else {
+        card.classList.remove('active');
+      }
+    });
+
+    // Update active dot indicator
+    certDots.forEach((dot, idx) => {
+      dot.classList.toggle('active', idx === currentCertIndex);
+    });
+  }
+
+  // Toggle card flip
+  function toggleCurrentFlip() {
+    if (certCards[currentCertIndex]) {
+      certCards[currentCertIndex].classList.toggle('flipped');
+    }
+  }
+
+  // Card click to flip (ignoring links/buttons inside)
+  certCards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('a') || e.target.closest('button')) return;
+      card.classList.toggle('flipped');
+    });
+  });
+
+  // Flip back buttons on card reverse side
+  const flipBackBtns = document.querySelectorAll('.flip-back-btn');
+  flipBackBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const card = btn.closest('.cert-card-3d');
+      if (card) card.classList.remove('flipped');
+    });
+  });
+
+  if (prevCertBtn) {
+    prevCertBtn.addEventListener('click', () => {
+      showCertIndex(currentCertIndex - 1);
+    });
+  }
+
+  if (nextCertBtn) {
+    nextCertBtn.addEventListener('click', () => {
+      showCertIndex(currentCertIndex + 1);
+    });
+  }
+
+  if (manualFlipBtn) {
+    manualFlipBtn.addEventListener('click', () => {
+      toggleCurrentFlip();
+    });
+  }
+
+  certDots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const idx = parseInt(dot.dataset.index, 10);
+      showCertIndex(idx);
+    });
+  });
+
+
+  /* ============================= 
+     14. DARK / LIGHT MODE THEME TOGGLE
+     ============================= */
+  const themeToggle = document.getElementById('themeToggle');
+  const savedTheme = localStorage.getItem('portfolio-theme');
+
+  if (savedTheme === 'light') {
+    document.body.classList.add('light-mode');
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      const isLight = document.body.classList.contains('light-mode');
+      localStorage.setItem('portfolio-theme', isLight ? 'light' : 'dark');
+    });
+  }
+
+
+  /* ============================= 
+     15. AI PORTFOLIO ASSISTANT CHATBOT
+     ============================= */
+  const aiChatbotToggle = document.getElementById('aiChatbotToggle');
+  const aiChatbotWindow = document.getElementById('aiChatbotWindow');
+  const aiChatClose = document.getElementById('aiChatClose');
+  const aiChatMessages = document.getElementById('aiChatMessages');
+  const aiChatInput = document.getElementById('aiChatInput');
+  const aiSendBtn = document.getElementById('aiSendBtn');
+  const suggestionChips = document.querySelectorAll('.suggestion-chip');
+
+  if (aiChatbotToggle && aiChatbotWindow) {
+    aiChatbotToggle.addEventListener('click', () => {
+      aiChatbotWindow.classList.toggle('active');
+      aiChatbotToggle.classList.toggle('active');
+    });
+  }
+
+  if (aiChatClose) {
+    aiChatClose.addEventListener('click', () => {
+      aiChatbotWindow.classList.remove('active');
+      aiChatbotToggle.classList.remove('active');
+    });
+  }
+
+  function formatTime() {
+    const now = new Date();
+    return now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  }
+
+  function appendUserMessage(text) {
+    const msgDiv = document.createElement('div');
+    msgDiv.className = 'ai-msg user';
+    msgDiv.innerHTML = `
+      <div class="msg-bubble">${escapeHTML(text)}</div>
+      <span class="msg-time">${formatTime()}</span>
+    `;
+    aiChatMessages.appendChild(msgDiv);
+    aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+  }
+
+  function appendBotMessage(htmlContent) {
+    const msgDiv = document.createElement('div');
+    msgDiv.className = 'ai-msg bot';
+    msgDiv.innerHTML = `
+      <div class="msg-bubble">${htmlContent}</div>
+      <span class="msg-time">${formatTime()}</span>
+    `;
+    aiChatMessages.appendChild(msgDiv);
+    aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+  }
+
+  function escapeHTML(str) {
+    return str.replace(/[&<>'"]/g, 
+      tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
+    );
+  }
+
+  function generateAIResponse(query) {
+    const q = query.toLowerCase();
+
+    // Personal Training Details
+    if (q.includes('contact number') || q.includes('phone number') || q.includes('mobile number') || q.includes('phone') || q.includes('number') || q.includes('mobile')) {
+      return "📞 <strong>Contact Number:</strong> <a href='tel:6379748608'>6379748608</a> (WhatsApp: <a href='https://wa.me/916379748608' target='_blank'>+91 6379748608</a>)";
+    }
+    else if (q.includes('how many siblings') || q.includes('number of brothers') || q.includes('count of siblings')) {
+      return "👨‍👦‍👦 Abdul has <strong>3 brothers</strong> (3 siblings).";
+    }
+    else if (q.includes('sibling') || q.includes('brothers name') || q.includes('brother name')) {
+      return "👦 <strong>Siblings Names:</strong><br>• <strong>First Brother:</strong> Mohamed Jameel<br>• <strong>Second Brother:</strong> Mohamed Faisal<br>• <strong>Third Brother:</strong> Abdul Basith";
+    }
+    else if (q.includes('city')) {
+      return "🏙️ <strong>City Name:</strong> Karaikkudi";
+    }
+    else if (q.includes('area')) {
+      return "📍 <strong>Area Name:</strong> Kattuthalaivasal";
+    }
+    else if (q.includes('district')) {
+      return "🏛️ <strong>District Name:</strong> Sivaganga";
+    }
+    else if (q.includes('address') || q.includes('where does he live') || q.includes('location')) {
+      return "🏠 <strong>Full Address:</strong><br>No.9, Munisipal Vaikkal Street, Kattuthalaivasal, Karaikkudi, Sivaganga District.";
+    }
+    else if (q.includes('age') || q.includes('how old')) {
+      return "🎂 <strong>Abdul Javith</strong> is <strong>20 years old</strong>.";
+    } 
+    else if (q.includes('single') || q.includes('commited') || q.includes('committed') || q.includes('relationship') || q.includes('gf') || q.includes('girlfriend') || q.includes('marital')) {
+      return "❤️ <strong>Relationship Status:</strong> Abdul Javith is currently <strong>Single</strong> and focused on building his tech career!";
+    } 
+    else if (q.includes('currently doing') || q.includes('what is he doing') || q.includes('current work') || q.includes('job') || q.includes('miniso') || q.includes('karaikkudi')) {
+      return "💼 <strong>Currently Doing:</strong><br>• He is studying <strong>3rd Year B.E. CSE</strong> (Computer Science & Engineering).<br>• He is also working part-time at the <strong>Miniso Franchise Store in Karaikkudi</strong>! 🛍️";
+    } 
+    else if (q.includes('father') || q.includes('dad')) {
+      return "👨‍👦 <strong>Father's Name:</strong> Abdul Nazar";
+    } 
+    else if (q.includes('mother') || q.includes('mom')) {
+      return "👩‍👦 <strong>Mother's Name:</strong> Jarina Begum";
+    } 
+    else if (q.includes('first brother') || q.includes('1st brother') || q.includes('elder brother')) {
+      return "👦 <strong>First Brother's Name:</strong> Mohamed Jameel";
+    } 
+    else if (q.includes('second brother') || q.includes('2nd brother')) {
+      return "👦 <strong>Second Brother's Name:</strong> Mohamed Faisal";
+    } 
+    else if (q.includes('third brother') || q.includes('3rd brother') || q.includes('youngest brother')) {
+      return "👦 <strong>Third Brother's Name:</strong> Abdul Basith";
+    } 
+    else if (q.includes('family')) {
+      return "👨‍👩‍👦‍👦 <strong>Abdul Javith's Family:</strong><br>• <strong>Father:</strong> Abdul Nazar<br>• <strong>Mother:</strong> Jarina Begum<br>• <strong>1st Brother:</strong> Mohamed Jameel<br>• <strong>2nd Brother:</strong> Mohamed Faisal<br>• <strong>3rd Brother:</strong> Abdul Basith";
+    } 
+    // Portfolio & Technical
+    else if (q.includes('skill') || q.includes('technology') || q.includes('stack') || q.includes('know')) {
+      return "💡 <strong>Abdul's Technical Stack:</strong><br>• <strong>Languages:</strong> HTML5, CSS3, JavaScript (ES6+), Python, Java, SQL<br>• <strong>Tools:</strong> Git, GitHub, VS Code, REST APIs<br>• <strong>Specialties:</strong> Responsive Design, Vector Search (MongoDB RAG), UI/UX!";
+    } 
+    else if (q.includes('project') || q.includes('work') || q.includes('build')) {
+      return "💻 <strong>Featured Projects:</strong><br>1. <strong>Lucky Times Website</strong> — Fully responsive e-commerce web platform<br>2. <strong>RAG Vector Search Engine</strong> — Built with MongoDB & AI Data Strategy<br>3. <strong>Interactive Portfolio</strong> — Modern UI with Dark/Light theme & 3D animations!<br><a href='#projects' onclick='document.getElementById(\"aiChatbotWindow\").classList.remove(\"active\")'>👉 Scroll to Projects</a>";
+    }
+    else if (q.includes('certif') || q.includes('mongodb')) {
+      return "📜 <strong>Official Certifications:</strong><br>• <strong>RAG with MongoDB</strong> (ID: MDBdx0ovivumg)<br>• <strong>MongoDB Basics for Students</strong> (ID: MDBd4bf0gvcv7)<br>• <strong>AI Data Strategy with MongoDB</strong> (ID: MDBhukc2xeb0z)<br><a href='#certifications' onclick='document.getElementById(\"aiChatbotWindow\").classList.remove(\"active\")'>👉 Scroll to Certifications</a>";
+    }
+    else if (q.includes('contact') || q.includes('email') || q.includes('phone') || q.includes('hire') || q.includes('reach')) {
+      return "📞 <strong>Get in Touch with Abdul:</strong><br>• <strong>Email:</strong> <a href='mailto:javithabdul924@gmail.com'>javithabdul924@gmail.com</a><br>• <strong>WhatsApp:</strong> <a href='https://wa.me/916379748608' target='_blank'>+91 6379748608</a><br>• <strong>LinkedIn:</strong> <a href='https://www.linkedin.com/in/abdul-javith-10b9763b6/' target='_blank'>Abdul Javith Profile</a>";
+    }
+    else if (q.includes('education') || q.includes('college') || q.includes('degree') || q.includes('study')) {
+      return "🎓 <strong>Education Background:</strong><br>Abdul is currently studying <strong>3rd Year Bachelor of Engineering (B.E.)</strong> in <em>Computer Science and Engineering</em> while working part-time at Miniso Karaikkudi!";
+    }
+    // General Knowledge Answering Capability
+    else if (q.includes('capital of india')) {
+      return "🇮🇳 The capital of India is <strong>New Delhi</strong>.";
+    }
+    else if (q.includes('capital of france')) {
+      return "🇫🇷 The capital of France is <strong>Paris</strong>.";
+    }
+    else if (q.includes('who created python') || q.includes('father of python')) {
+      return "🐍 Python was created by <strong>Guido van Rossum</strong> in 1991.";
+    }
+    else if (q.includes('what is html')) {
+      return "🌐 <strong>HTML</strong> stands for <em>HyperText Markup Language</em>. It is the standard language for creating Web pages.";
+    }
+    else if (q.includes('what is css')) {
+      return "🎨 <strong>CSS</strong> stands for <em>Cascading Style Sheets</em>. It is used to format and style the layout of Web pages.";
+    }
+    else if (q.includes('what is javascript') || q.includes('what is js')) {
+      return "⚡ <strong>JavaScript</strong> is a programming language used to build interactive and dynamic content on websites.";
+    }
+    else if (q.includes('who is prime minister of india') || q.includes('pm of india')) {
+      return "🇮🇳 The Prime Minister of India is <strong>Narendra Modi</strong>.";
+    }
+    else if (q.includes('what is ai') || q.includes('artificial intelligence')) {
+      return "🤖 <strong>AI (Artificial Intelligence)</strong> refers to computer systems engineered to perform tasks that typically require human intelligence, like speech recognition, learning, and decision-making.";
+    }
+    else {
+      return "🤖 Thanks for asking! I'm trained with Abdul's personal background, portfolio details, and general knowledge. Feel free to ask about his age, family, education, skills, projects, or general tech/GK questions! 🚀";
+    }
+  }
+
+  function handleSend() {
+    const text = aiChatInput.value.trim();
+    if (!text) return;
+
+    appendUserMessage(text);
+    aiChatInput.value = '';
+
+    // Simulate typing delay for bot
+    setTimeout(() => {
+      const reply = generateAIResponse(text);
+      appendBotMessage(reply);
+    }, 600);
+  }
+
+  if (aiSendBtn) {
+    aiSendBtn.addEventListener('click', handleSend);
+  }
+
+  if (aiChatInput) {
+    aiChatInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') handleSend();
+    });
+  }
+
+  suggestionChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const q = chip.dataset.query;
+      aiChatInput.value = q;
+      handleSend();
     });
   });
 
