@@ -703,18 +703,78 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function generateAIResponse(query) {
-    const q = query.toLowerCase();
+    const q = query.toLowerCase().trim();
 
-    // Personal Training Details
-    if (q.includes('contact number') || q.includes('phone number') || q.includes('mobile number') || q.includes('phone') || q.includes('number') || q.includes('mobile')) {
+    // ==========================================
+    // 1. SPECIFIC TRAINED QUESTIONS ABOUT JAVI
+    // ==========================================
+    
+    // Short Name
+    if (q.includes('short name') || q.includes('nickname') || q.includes('what to call him') || q.includes('javith short name')) {
+      return "🏷️ <strong>Short Name:</strong> JAVI";
+    }
+
+    // Aim / Goal / Ambition
+    else if (q.includes('aim') || q.includes('goal') || q.includes('ambition') || q.includes('target') || q.includes('javi aim')) {
+      return "🎯 <strong>Javi's Aim:</strong> Javi's aim is to become an outstanding <strong>Software Engineer & AI Developer</strong>, building innovative web platforms and smart technology solutions! 🚀";
+    }
+
+    // Love / Relationship Status
+    else if (q.includes('love someone') || q.includes('loved someone') || q.includes('in love') || q.includes('has a lover') || q.includes('love status')) {
+      return "❤️ <strong>Relationship Status:</strong> HE DON'T LOVE SOMEONE. Javi is currently single and dedicated to his studies and coding career!";
+    }
+
+    // Salary
+    else if (q.includes('salary') || q.includes('income') || q.includes('earning') || q.includes('salary now')) {
+      return "💰 <strong>Salary:</strong> I DONOT KNOW ABOUT HIS SALARY.";
+    }
+
+    // Crush
+    else if (q.includes('crush') || q.includes('who is javi crush') || q.includes('who is the javi crush')) {
+      return "💖 <strong>Javi's Crush:</strong> JAVI CRUSH IS YOU! 😉";
+    }
+
+    // Hobby
+    else if (q.includes('hobby') || q.includes('hobbies') || q.includes('free time') || q.includes('cricket') || q.includes('javi hobby')) {
+      return "🏏 <strong>Javi's Hobby:</strong> JAVI HOBBY IS PLAYING AN CRICKET!";
+    }
+
+    // ==========================================
+    // 2. PERSONAL & PORTFOLIO KNOWLEDGE
+    // ==========================================
+
+    // Contact details
+    else if (q.includes('contact number') || q.includes('phone number') || q.includes('mobile number') || q.includes('phone') || q.includes('number') || q.includes('mobile')) {
       return "📞 <strong>Contact Number:</strong> <a href='tel:6379748608'>6379748608</a> (WhatsApp: <a href='https://wa.me/916379748608' target='_blank'>+91 6379748608</a>)";
     }
+
+    // Siblings
     else if (q.includes('how many siblings') || q.includes('number of brothers') || q.includes('count of siblings')) {
       return "👨‍👦‍👦 Abdul has <strong>3 brothers</strong> (3 siblings).";
     }
     else if (q.includes('sibling') || q.includes('brothers name') || q.includes('brother name')) {
       return "👦 <strong>Siblings Names:</strong><br>• <strong>First Brother:</strong> Mohamed Jameel<br>• <strong>Second Brother:</strong> Mohamed Faisal<br>• <strong>Third Brother:</strong> Abdul Basith";
     }
+    else if (q.includes('first brother') || q.includes('1st brother') || q.includes('elder brother')) {
+      return "👦 <strong>First Brother's Name:</strong> Mohamed Jameel";
+    } 
+    else if (q.includes('second brother') || q.includes('2nd brother')) {
+      return "👦 <strong>Second Brother's Name:</strong> Mohamed Faisal";
+    } 
+    else if (q.includes('third brother') || q.includes('3rd brother') || q.includes('youngest brother')) {
+      return "👦 <strong>Third Brother's Name:</strong> Abdul Basith";
+    } 
+    else if (q.includes('family')) {
+      return "👨‍👩‍👦‍👦 <strong>Abdul Javith's Family:</strong><br>• <strong>Father:</strong> Abdul Nazar<br>• <strong>Mother:</strong> Jarina Begum<br>• <strong>1st Brother:</strong> Mohamed Jameel<br>• <strong>2nd Brother:</strong> Mohamed Faisal<br>• <strong>3rd Brother:</strong> Abdul Basith";
+    }
+
+    // Parents & Address
+    else if (q.includes('father') || q.includes('dad')) {
+      return "👨‍👦 <strong>Father's Name:</strong> Abdul Nazar";
+    } 
+    else if (q.includes('mother') || q.includes('mom')) {
+      return "👩‍👦 <strong>Mother's Name:</strong> Jarina Begum";
+    } 
     else if (q.includes('city')) {
       return "🏙️ <strong>City Name:</strong> Karaikkudi";
     }
@@ -734,29 +794,12 @@ document.addEventListener('DOMContentLoaded', () => {
       return "❤️ <strong>Relationship Status:</strong> Abdul Javith is currently <strong>Single</strong> and focused on building his tech career!";
     } 
     else if (q.includes('currently doing') || q.includes('what is he doing') || q.includes('current work') || q.includes('job') || q.includes('miniso') || q.includes('karaikkudi')) {
-      return "💼 <strong>Currently Doing:</strong><br>• He is studying <strong>3rd Year B.E. CSE</strong> (Computer Science & Engineering).<br>• He is also working part-time at the <strong>Miniso Franchise Store in Karaikkudi</strong>! 🛍️";
+      return "💼 <strong>Currently Doing:</strong><br>• Studying <strong>3rd Year B.E. CSE</strong> (Computer Science & Engineering).<br>• Working part-time at the <strong>Miniso Franchise Store in Karaikkudi</strong>! 🛍️";
     } 
-    else if (q.includes('father') || q.includes('dad')) {
-      return "👨‍👦 <strong>Father's Name:</strong> Abdul Nazar";
-    } 
-    else if (q.includes('mother') || q.includes('mom')) {
-      return "👩‍👦 <strong>Mother's Name:</strong> Jarina Begum";
-    } 
-    else if (q.includes('first brother') || q.includes('1st brother') || q.includes('elder brother')) {
-      return "👦 <strong>First Brother's Name:</strong> Mohamed Jameel";
-    } 
-    else if (q.includes('second brother') || q.includes('2nd brother')) {
-      return "👦 <strong>Second Brother's Name:</strong> Mohamed Faisal";
-    } 
-    else if (q.includes('third brother') || q.includes('3rd brother') || q.includes('youngest brother')) {
-      return "👦 <strong>Third Brother's Name:</strong> Abdul Basith";
-    } 
-    else if (q.includes('family')) {
-      return "👨‍👩‍👦‍👦 <strong>Abdul Javith's Family:</strong><br>• <strong>Father:</strong> Abdul Nazar<br>• <strong>Mother:</strong> Jarina Begum<br>• <strong>1st Brother:</strong> Mohamed Jameel<br>• <strong>2nd Brother:</strong> Mohamed Faisal<br>• <strong>3rd Brother:</strong> Abdul Basith";
-    } 
-    // Portfolio & Technical
+
+    // Skills, Projects & Certifications
     else if (q.includes('skill') || q.includes('technology') || q.includes('stack') || q.includes('know')) {
-      return "💡 <strong>Abdul's Technical Stack:</strong><br>• <strong>Languages:</strong> HTML5, CSS3, JavaScript (ES6+), Python, Java, SQL<br>• <strong>Tools:</strong> Git, GitHub, VS Code, REST APIs<br>• <strong>Specialties:</strong> Responsive Design, Vector Search (MongoDB RAG), UI/UX!";
+      return "💡 <strong>Abdul's Technical Stack:</strong><br>• <strong>Languages:</strong> HTML5, CSS3, JavaScript (ES6+), Python, Java, SQL<br>• <strong>Tools:</strong> Git, GitHub, VS Code, REST APIs<br>• <strong>Specialties:</strong> Responsive UI/UX Design, RAG Vector Search (MongoDB), Modern Web Dev!";
     } 
     else if (q.includes('project') || q.includes('work') || q.includes('build')) {
       return "💻 <strong>Featured Projects:</strong><br>1. <strong>Lucky Times Website</strong> — Fully responsive e-commerce web platform<br>2. <strong>RAG Vector Search Engine</strong> — Built with MongoDB & AI Data Strategy<br>3. <strong>Interactive Portfolio</strong> — Modern UI with Dark/Light theme & 3D animations!<br><a href='#projects' onclick='document.getElementById(\"aiChatbotWindow\").classList.remove(\"active\")'>👉 Scroll to Projects</a>";
@@ -764,39 +807,106 @@ document.addEventListener('DOMContentLoaded', () => {
     else if (q.includes('certif') || q.includes('mongodb')) {
       return "📜 <strong>Official Certifications:</strong><br>• <strong>RAG with MongoDB</strong> (ID: MDBdx0ovivumg)<br>• <strong>MongoDB Basics for Students</strong> (ID: MDBd4bf0gvcv7)<br>• <strong>AI Data Strategy with MongoDB</strong> (ID: MDBhukc2xeb0z)<br><a href='#certifications' onclick='document.getElementById(\"aiChatbotWindow\").classList.remove(\"active\")'>👉 Scroll to Certifications</a>";
     }
-    else if (q.includes('contact') || q.includes('email') || q.includes('phone') || q.includes('hire') || q.includes('reach')) {
+    else if (q.includes('contact') || q.includes('email') || q.includes('hire') || q.includes('reach')) {
       return "📞 <strong>Get in Touch with Abdul:</strong><br>• <strong>Email:</strong> <a href='mailto:javithabdul924@gmail.com'>javithabdul924@gmail.com</a><br>• <strong>WhatsApp:</strong> <a href='https://wa.me/916379748608' target='_blank'>+91 6379748608</a><br>• <strong>LinkedIn:</strong> <a href='https://www.linkedin.com/in/abdul-javith-10b9763b6/' target='_blank'>Abdul Javith Profile</a>";
     }
     else if (q.includes('education') || q.includes('college') || q.includes('degree') || q.includes('study')) {
       return "🎓 <strong>Education Background:</strong><br>Abdul is currently studying <strong>3rd Year Bachelor of Engineering (B.E.)</strong> in <em>Computer Science and Engineering</em> while working part-time at Miniso Karaikkudi!";
     }
-    // General Knowledge Answering Capability
+
+    // ==========================================
+    // 3. GENERAL KNOWLEDGE & CHATGPT-STYLE ENGINE
+    // ==========================================
+
+    // Greetings
+    else if (/^(hi|hello|hey|greetings|hola|good morning|good afternoon|good evening|wassup|sup)/i.test(q)) {
+      return "👋 <strong>Hello!</strong> How can I assist you today? Feel free to ask me anything about <strong>Javi (Abdul Javith)</strong> or ask any general knowledge & programming question!";
+    }
+    else if (q.includes('how are you')) {
+      return "😊 I'm doing great and ready to answer your questions! How can I help you today?";
+    }
+    else if (q.includes('who are you') || q.includes('what are you') || q.includes('your name')) {
+      return "🤖 I am <strong>Javi's AI Assistant</strong>, powered by smart conversational search similar to ChatGPT! I can answer questions about Javi's background as well as general knowledge & technical queries.";
+    }
+    else if (q.includes('thank') || q.includes('thanks')) {
+      return "🙌 You're very welcome! If you have any more questions about Javi or tech, just ask!";
+    }
+
+    // Simple Math Solver
+    else if (/^[\d\s\+\-\*\/\(\)\.]+$/.test(q)) {
+      try {
+        const result = Function('"use strict";return (' + q + ')')();
+        return `🔢 <strong>Math Calculation Result:</strong><br><code>${q} = ${result}</code>`;
+      } catch(e) {}
+    }
+
+    // Programming & Tech Concepts
+    else if (q.includes('what is html')) {
+      return "🌐 <strong>HTML (HyperText Markup Language):</strong> The standard code used to structure and present web pages and content on the Internet.";
+    }
+    else if (q.includes('what is css')) {
+      return "🎨 <strong>CSS (Cascading Style Sheets):</strong> A styling language used to describe the presentation, layouts, colors, and design of documents written in HTML.";
+    }
+    else if (q.includes('what is javascript') || q.includes('what is js')) {
+      return "⚡ <strong>JavaScript:</strong> A lightweight, interpreted programming language with first-class functions, widely used to make web pages interactive and dynamic.";
+    }
+    else if (q.includes('what is python')) {
+      return "🐍 <strong>Python:</strong> A high-level, general-purpose programming language renowned for code readability, used in web development, AI, data science, and automation.";
+    }
+    else if (q.includes('what is java')) {
+      return "☕ <strong>Java:</strong> A class-based, object-oriented programming language designed to have as few implementation dependencies as possible (Write Once, Run Anywhere).";
+    }
+    else if (q.includes('what is sql') || q.includes('database')) {
+      return "🗄️ <strong>SQL & Databases:</strong> SQL (Structured Query Language) is used to store, manipulate, and retrieve data stored in relational database management systems.";
+    }
+    else if (q.includes('what is mongodb') || q.includes('nosql')) {
+      return "🍃 <strong>MongoDB:</strong> A popular NoSQL document-oriented database used for high volume data storage using JSON-like documents.";
+    }
+    else if (q.includes('what is ai') || q.includes('artificial intelligence')) {
+      return "🤖 <strong>AI (Artificial Intelligence):</strong> The simulation of human intelligence processes by machines and computer systems, including learning, reasoning, and self-correction.";
+    }
+    else if (q.includes('what is rag') || q.includes('retrieval augmented')) {
+      return "🔍 <strong>RAG (Retrieval-Augmented Generation):</strong> An AI technique that connects Large Language Models to external databases (like MongoDB) to give precise, grounded factual answers.";
+    }
+    else if (q.includes('what is chatgpt')) {
+      return "💬 <strong>ChatGPT:</strong> An advanced AI language model created by OpenAI that understands natural language context and answers complex questions interactively.";
+    }
+    else if (q.includes('who created python') || q.includes('father of python')) {
+      return "🐍 Python was created by <strong>Guido van Rossum</strong> and released in 1991.";
+    }
+
+    // General Knowledge & World Facts
     else if (q.includes('capital of india')) {
       return "🇮🇳 The capital of India is <strong>New Delhi</strong>.";
     }
     else if (q.includes('capital of france')) {
       return "🇫🇷 The capital of France is <strong>Paris</strong>.";
     }
-    else if (q.includes('who created python') || q.includes('father of python')) {
-      return "🐍 Python was created by <strong>Guido van Rossum</strong> in 1991.";
+    else if (q.includes('capital of usa') || q.includes('capital of united states') || q.includes('capital of america')) {
+      return "🇺🇸 The capital of the USA is <strong>Washington, D.C.</strong>";
     }
-    else if (q.includes('what is html')) {
-      return "🌐 <strong>HTML</strong> stands for <em>HyperText Markup Language</em>. It is the standard language for creating Web pages.";
-    }
-    else if (q.includes('what is css')) {
-      return "🎨 <strong>CSS</strong> stands for <em>Cascading Style Sheets</em>. It is used to format and style the layout of Web pages.";
-    }
-    else if (q.includes('what is javascript') || q.includes('what is js')) {
-      return "⚡ <strong>JavaScript</strong> is a programming language used to build interactive and dynamic content on websites.";
-    }
-    else if (q.includes('who is prime minister of india') || q.includes('pm of india')) {
+    else if (q.includes('pm of india') || q.includes('prime minister of india')) {
       return "🇮🇳 The Prime Minister of India is <strong>Narendra Modi</strong>.";
     }
-    else if (q.includes('what is ai') || q.includes('artificial intelligence')) {
-      return "🤖 <strong>AI (Artificial Intelligence)</strong> refers to computer systems engineered to perform tasks that typically require human intelligence, like speech recognition, learning, and decision-making.";
+    else if (q.includes('largest planet') || q.includes('biggest planet')) {
+      return "🪐 The largest planet in our solar system is <strong>Jupiter</strong>.";
     }
+    else if (q.includes('tell a joke') || q.includes('joke')) {
+      return "😄 Why do programmers prefer dark mode?<br><em>Because light attracts bugs!</em> 🐛💻";
+    }
+    else if (q.includes('quote') || q.includes('motivation')) {
+      return "🌟 <em>\"The only way to do great work is to love what you do.\"</em> — Steve Jobs";
+    }
+
+    // General Fallback like ChatGPT
     else {
-      return "🤖 Thanks for asking! I'm trained with Abdul's personal background, portfolio details, and general knowledge. Feel free to ask about his age, family, education, skills, projects, or general tech/GK questions! 🚀";
+      return `✨ <strong>Meet JAVI AI — Your Digital Guide to Javi 🚀</strong><br><br>` +
+             `I’m an AI trained around <strong>Javi (Abdul Javith)</strong> — built to understand his <strong>tech journey, projects, skills, interests, experiences, goals, and personal side</strong>.<br><br>` +
+             `<strong>💻 Tech Profile</strong> — Programming • Web Development • AI/ML • Databases • Software<br><br>` +
+             `<strong>🚀 Projects</strong> — What he builds, experiments with, and learns<br><br>` +
+             `<strong>🎯 Journey</strong> — His goals, interests, and areas of growth<br><br>` +
+             `<strong>🧩 Personal</strong> — Selected preferences, hobbies, and details he has shared<br><br>` +
+             `<strong>🧠 AI Knowledge</strong> — General software and technical Q&A`;
     }
   }
 
