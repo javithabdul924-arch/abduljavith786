@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function resizeCanvas() {
     canvas.width = window.innerWidth;
-    canvas.height = document.body.scrollHeight;
+    canvas.height = window.innerHeight;
   }
 
   class Particle {
